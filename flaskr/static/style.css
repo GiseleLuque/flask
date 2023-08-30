@@ -1,6 +1,6 @@
 html {
   font-family: sans-serif;
-  background: #3a3a3afb;
+  background: #464141fb;
   padding: 1rem;
 }
 body {
@@ -14,7 +14,7 @@ h1 {
   margin: 1rem 0;
 }
 a {
-  color: #ff6600;
+  color: #ff7300;
 }
 hr {
   border: none;
@@ -50,7 +50,7 @@ header .action {
   padding: 0 1rem 1rem;
 }
 .content > header {
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid rgb(255, 136, 0);
   display: flex;
   align-items: flex-end;
 }
@@ -104,7 +104,7 @@ header .action {
   resize: vertical;
 }
 input.danger {
-  color: #1e1c8f;
+  color: #000cb8;
 }
 input[type="submit"] {
   align-self: start;
