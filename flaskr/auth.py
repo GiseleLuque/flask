@@ -16,6 +16,7 @@ def register():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        verificarcontraseña = request.form['verificarContraseña']
         #verify_password = request.form['verify_password']
         db = get_db()
         error = None
@@ -24,8 +25,8 @@ def register():
             error = 'Se requiere usuario'
         elif not password:
             error = 'Se requiere contraseña.'
-        #elif not verify_password:
-        #    error = 'Se requiere verificar su contraseña'
+        elif not verificarcontraseña == password:
+           error = 'Contraseña incorrecta, por favor revise de nuevo'
 
         if error is None:
             try:
@@ -50,7 +51,8 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        #verify_password = request.form['verify_password']
+        
+
         db = get_db()
         error = None
         user = db.execute(
@@ -62,8 +64,7 @@ def login():
         elif not check_password_hash(user['password'], password):
             error = 'Contraseña incorrecta, por favor reviselo'
 
-        #elif not check_password_hash(user['verify_password'], password):
-         #   error = 'Contraseña incorrecta, por favor revise de nuevo'
+       
 
         if error is None:
             session.clear()
