@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block header %}
+<h1>{% block title %}Cambio de Email{% endblock %}</h1>
+{% endblock %} {% block content %}
+<form method="post">
+  <label for="Email">Mail Anterior</label>
+  <input  name="Email" id="Email" readonly value="{{g.user['email']}}" />
+  <label for="mail">Nuevo Mail</label>
+  <input name="mail" id="mail" required/>
+  <input type="submit" value="Guardar cambios" />
+</form>
+{% endblock %}
