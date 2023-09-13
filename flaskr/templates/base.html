@@ -5,7 +5,7 @@
   <h1>Flaskr</h1>
   <ul>
     {% if g.user %}
-    <li><span>{{ g.user['username'] }}</span></li>
+    <li><span>{{ g.user['username'] }}, {{ g.user['email'] }}</span></li>
     <li><a href="{{ url_for('auth.logout') }}">Cerrar sesión</a> {% else %}</li>
 
     <li><a href="{{ url_for('auth.register') }}">Registro</a></li>
